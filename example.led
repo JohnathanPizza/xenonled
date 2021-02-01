@@ -1,0 +1,27 @@
+newstrip strip, 20, 9
+tag setloop
+	setstrip strip
+	i a, 0
+	loop a != 20
+		i b, 0
+		loop b < 256
+			setpix a, 0, b, b
+			show
+			set b, b + 10
+		end
+		set a, a + 1
+	end
+	setall 0
+	show
+	#i ptest, 200
+	set a, 0
+	loop a < 100
+		setall 0
+		i tm, a / 10
+		checker tm % 2, ptest, 0, 0
+		set a, a + 1
+		show
+	end#
+	setall 0
+	show
+tag endloop
